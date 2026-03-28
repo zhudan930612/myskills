@@ -1,0 +1,286 @@
+{
+  "version": 1,
+  "updatedAt": "2026-03-18T19:21:42",
+  "skills": [
+    {
+      "name": "agent-browser",
+      "scope": "shared",
+      "source": "lock:agent-browser",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "agent-md-refactor",
+      "scope": "shared",
+      "source": "lock:agent-md-refactor",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "brainstorming",
+      "scope": "shared",
+      "source": "lock:brainstorming",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "canvas-design",
+      "scope": "shared",
+      "source": "lock:canvas-design",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "commit-work",
+      "scope": "shared",
+      "source": "lock:commit-work",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "competitive-analysis",
+      "scope": "shared",
+      "source": "lock:competitive-analysis",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "copy-editing",
+      "scope": "shared",
+      "source": "lock:copy-editing",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "create-handoff",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "doc-sync",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "docx",
+      "scope": "shared",
+      "source": "lock:docx",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "everything-claude-code",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "executing-plans",
+      "scope": "shared",
+      "source": "lock:executing-plans",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "feature-design",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "find-skills",
+      "scope": "shared",
+      "source": "lock:find-skills",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "frontend-design",
+      "scope": "shared",
+      "source": "lock:frontend-design",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "global-skill-sync",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "humanizer",
+      "scope": "shared",
+      "source": "lock:humanizer",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "naming-analyzer",
+      "scope": "shared",
+      "source": "lock:naming-analyzer",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "ocr-document-processor",
+      "scope": "shared",
+      "source": "lock:ocr-document-processor",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "page-cro",
+      "scope": "shared",
+      "source": "lock:page-cro",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "paywall-upgrade-cro",
+      "scope": "shared",
+      "source": "lock:paywall-upgrade-cro",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "pdf",
+      "scope": "shared",
+      "source": "lock:pdf",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "planning-advice",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "planning-with-files",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "pricing-strategy",
+      "scope": "shared",
+      "source": "lock:pricing-strategy",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "programmatic-seo",
+      "scope": "shared",
+      "source": "lock:programmatic-seo",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "requirement-review",
+      "scope": "shared",
+      "source": "lock:requirement-review",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "resume-eval",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "session-handoff",
+      "scope": "shared",
+      "source": "lock:session-handoff",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "skill-saver",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "skills-governance-audit",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "spreadsheet",
+      "scope": "shared",
+      "source": "lock:spreadsheet",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "sql-file-generator",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "systematic-debugging",
+      "scope": "shared",
+      "source": "lock:systematic-debugging",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "tech-stack-evaluation",
+      "scope": "shared",
+      "source": "lock:tech-stack-evaluation",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "test-driven-development",
+      "scope": "shared",
+      "source": "lock:test-driven-development",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "theme-factory",
+      "scope": "shared",
+      "source": "lock:theme-factory",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "scope": "shared",
+      "source": "lock:ui-ux-pro-max",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "vercel-react-best-practices",
+      "scope": "shared",
+      "source": "lock:vercel-react-best-practices",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "write-feature-doc",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    }
+  ]
+}

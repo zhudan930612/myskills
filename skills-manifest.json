@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "updatedAt": "2026-03-27T17:45:00",
+  "skills": [
+    {
+      "name": "agent-browser",
+      "scope": "shared",
+      "source": "lock:agent-browser",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "commit-work",
+      "scope": "shared",
+      "source": "lock:commit-work",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "find-skills",
+      "scope": "shared",
+      "source": "lock:find-skills",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "frontend-design",
+      "scope": "shared",
+      "source": "lock:frontend-design",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "global-skill-sync",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "grill-me",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "mem-search",
+      "scope": "shared",
+      "source": "lock:mem-search",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "pdf",
+      "scope": "shared",
+      "source": "lock:pdf",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "resume-eval",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "skills-governance-audit",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "spreadsheet",
+      "scope": "shared",
+      "source": "lock:spreadsheet",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "scope": "shared",
+      "source": "lock:ui-ux-pro-max",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "advanced-elicitation",
+      "scope": "shared",
+      "source": "lock:advanced-elicitation",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "product-requirements",
+      "scope": "shared",
+      "source": "lock:product-requirements",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "superpowers",
+      "scope": "shared",
+      "source": "lock:superpowers",
+      "owner": "shared",
+      "status": "active"
+    }
+  ]
+}
