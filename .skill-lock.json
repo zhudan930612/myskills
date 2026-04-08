@@ -71,8 +71,8 @@
       "sourceUrl": "",
       "skillPath": "SKILL.md",
       "skillFolderHash": "",
-      "installedAt": "2026-03-23T20:01:21.9322440+08:00",
-      "updatedAt": "2026-03-23T20:01:21.9322440+08:00"
+      "installedAt": "2026-03-23T20:01:21.932244+08:00",
+      "updatedAt": "2026-03-23T20:01:21.932244+08:00"
     },
     "resume-eval": {
       "source": "local:C:/Users/zhudan/.agents/skills/resume-eval",
@@ -116,8 +116,8 @@
       "sourceUrl": "https://github.com/cexll/myclaude.git",
       "skillPath": "skills/product-requirements/SKILL.md",
       "skillFolderHash": "c394b089a3dc17b1b6e296712e1a6b51a9c4c3b9",
-      "installedAt": "2026-03-27T09:20:52.170Z",
-      "updatedAt": "2026-03-27T09:20:52.170Z"
+      "installedAt": "2026-03-27T09:20:52.17Z",
+      "updatedAt": "2026-03-27T09:20:52.17Z"
     },
     "advanced-elicitation": {
       "source": "oimiragieo/agent-studio",
@@ -127,6 +127,15 @@
       "skillFolderHash": "51097d51d7de84f77af09c2b87389587684867a3",
       "installedAt": "2026-03-27T09:43:55.751Z",
       "updatedAt": "2026-03-27T09:43:55.751Z"
+    },
+    "decision-prd-splitter": {
+      "source": "local:C:/Users/zhudan/.agents/skills/decision-prd-splitter",
+      "sourceType": "local",
+      "sourceUrl": "",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-04-07T03:17:39.464Z",
+      "updatedAt": "2026-04-07T03:17:39.464Z"
     }
   },
   "dismissed": {

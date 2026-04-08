@@ -1,7 +1,14 @@
 {
   "version": 1,
-  "updatedAt": "2026-03-27T17:45:00",
+  "updatedAt": "2026-04-07T11:17:39",
   "skills": [
+    {
+      "name": "advanced-elicitation",
+      "scope": "shared",
+      "source": "lock:advanced-elicitation",
+      "owner": "shared",
+      "status": "active"
+    },
     {
       "name": "agent-browser",
       "scope": "shared",
@@ -14,6 +21,13 @@
       "scope": "shared",
       "source": "lock:commit-work",
       "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "decision-prd-splitter",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
       "status": "active"
     },
     {
@@ -59,6 +73,13 @@
       "status": "active"
     },
     {
+      "name": "product-requirements",
+      "scope": "shared",
+      "source": "lock:product-requirements",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
       "name": "resume-eval",
       "scope": "shared",
       "source": "local:managed",
@@ -80,30 +101,16 @@
       "status": "active"
     },
     {
-      "name": "ui-ux-pro-max",
-      "scope": "shared",
-      "source": "lock:ui-ux-pro-max",
-      "owner": "shared",
-      "status": "active"
-    },
-    {
-      "name": "advanced-elicitation",
-      "scope": "shared",
-      "source": "lock:advanced-elicitation",
-      "owner": "shared",
-      "status": "active"
-    },
-    {
-      "name": "product-requirements",
-      "scope": "shared",
-      "source": "lock:product-requirements",
-      "owner": "shared",
-      "status": "active"
-    },
-    {
       "name": "superpowers",
       "scope": "shared",
       "source": "lock:superpowers",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "scope": "shared",
+      "source": "lock:ui-ux-pro-max",
       "owner": "shared",
       "status": "active"
     }
