@@ -80,6 +80,13 @@
       "status": "active"
     },
     {
+      "name": "product-blueprint-architecture",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
+      "status": "active"
+    },
+    {
       "name": "resume-eval",
       "scope": "shared",
       "source": "local:managed",

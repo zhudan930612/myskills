@@ -1,0 +1,4 @@
+interface:
+  display_name: "通用产品蓝图技能"
+  short_description: "面向不同业务生成产品蓝图及模块标签来源说明文档"
+  default_prompt: "Use $product-blueprint-architecture to create a reusable product blueprint for the current business domain and, when needed, a source explanation document."
