@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-07T11:17:39",
+  "updatedAt": "2026-04-13T09:25:49",
   "skills": [
     {
       "name": "advanced-elicitation",
@@ -56,6 +56,13 @@
       "scope": "shared",
       "source": "local:managed",
       "owner": "local",
+      "status": "active"
+    },
+    {
+      "name": "office-hours",
+      "scope": "shared",
+      "source": "github:garrytan/gstack@office-hours",
+      "owner": "shared",
       "status": "active"
     },
     {
@@ -118,6 +125,41 @@
       "name": "ui-ux-pro-max",
       "scope": "shared",
       "source": "lock:ui-ux-pro-max",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "caveman",
+      "scope": "shared",
+      "source": "lock:caveman",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "caveman-commit",
+      "scope": "shared",
+      "source": "lock:caveman-commit",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "caveman-compress",
+      "scope": "shared",
+      "source": "lock:caveman-compress",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "caveman-help",
+      "scope": "shared",
+      "source": "lock:caveman-help",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "caveman-review",
+      "scope": "shared",
+      "source": "lock:caveman-review",
       "owner": "shared",
       "status": "active"
     }
