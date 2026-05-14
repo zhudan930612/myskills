@@ -137,16 +137,7 @@
       "installedAt": "2026-03-27T09:43:55.751Z",
       "updatedAt": "2026-03-27T09:43:55.751Z"
     },
-    "decision-prd-splitter": {
-      "source": "local:C:/Users/zhudan/.agents/skills/decision-prd-splitter",
-      "sourceType": "local",
-      "sourceUrl": "",
-      "skillPath": "SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-07T03:17:39.464Z",
-      "updatedAt": "2026-04-07T03:17:39.464Z"
-    },
-    "caveman": {
+"caveman": {
       "source": "JuliusBrussee/caveman",
       "sourceType": "github",
       "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
@@ -190,6 +181,15 @@
       "skillFolderHash": "2147719da5f81255dbf960d6ce46d5a7ee9d0860",
       "installedAt": "2026-04-14T07:53:00.354Z",
       "updatedAt": "2026-04-14T07:53:00.354Z"
+    },
+    "huashu-design": {
+      "source": "alchaincyf/huashu-design",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/alchaincyf/huashu-design.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "23f60d9b4304f20851469987c6e2c92242b94a45",
+      "installedAt": "2026-04-30T05:54:17.706Z",
+      "updatedAt": "2026-04-30T05:54:17.706Z"
     }
   },
   "dismissed": {

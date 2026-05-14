@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-13T09:25:49",
+  "updatedAt": "2026-05-14T00:00:00+08:00",
   "skills": [
     {
       "name": "advanced-elicitation",
@@ -21,13 +21,6 @@
       "scope": "shared",
       "source": "lock:commit-work",
       "owner": "shared",
-      "status": "active"
-    },
-    {
-      "name": "decision-prd-splitter",
-      "scope": "shared",
-      "source": "local:managed",
-      "owner": "local",
       "status": "active"
     },
     {
@@ -63,6 +56,13 @@
       "scope": "shared",
       "source": "github:garrytan/gstack@office-hours",
       "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "officecli",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
       "status": "active"
     },
     {
@@ -161,6 +161,20 @@
       "scope": "shared",
       "source": "lock:caveman-review",
       "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "huashu-design",
+      "scope": "shared",
+      "source": "lock:huashu-design",
+      "owner": "shared",
+      "status": "active"
+    },
+    {
+      "name": "playwright",
+      "scope": "shared",
+      "source": "local:managed",
+      "owner": "local",
       "status": "active"
     }
   ]

@@ -74,3 +74,5 @@ description: 执行跨客户端的全局技能同步并做一致性校验。触�
 ## Behavior Rules
 - 默认执行“同步 + 审计 + 结果汇总”，不进行其他业务改动。
 - `-DryRun` 仅做模拟同步并照常输出检查结果。
+- 同步前先扫描 `~/.agents/skills`；若发现共享技能目录尚未登记到 `skills-manifest.json`，则自动补登记后再继续同步。
+- 自动补登记的默认口径为：`scope=shared`、`source=local:managed`、`owner=local`、`status=active`；`-DryRun` 只输出计划动作，不落盘。

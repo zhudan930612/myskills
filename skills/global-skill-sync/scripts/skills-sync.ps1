@@ -47,6 +47,70 @@ function Invoke-Change {
   }
 }
 
+function Get-SharedSkillNames {
+  param([string]$RootPath)
+
+  if (-not (Test-Path $RootPath)) {
+    return @()
+  }
+
+  return @(
+    Get-ChildItem -Path $RootPath -Directory -Force -ErrorAction SilentlyContinue |
+      Where-Object { $IgnoreSkills -notcontains $_.Name } |
+      ForEach-Object { $_.Name } |
+      Sort-Object
+  )
+}
+
+function Sync-ManifestFromSharedRoot {
+  param(
+    [string]$ManifestPath,
+    [string]$SharedRoot
+  )
+
+  if (-not (Test-Path $ManifestPath)) {
+    throw "Manifest not found: $ManifestPath"
+  }
+
+  $manifest = Get-Content -Raw $ManifestPath | ConvertFrom-Json
+  if (-not $manifest.skills) {
+    throw "Manifest missing skills array: $ManifestPath"
+  }
+
+  $manifestNames = @($manifest.skills | ForEach-Object { $_.name })
+  $sharedExisting = Get-SharedSkillNames -RootPath $SharedRoot
+  $missingNames = @($sharedExisting | Where-Object { $manifestNames -notcontains $_ })
+
+  foreach ($name in $missingNames) {
+    $entry = [pscustomobject]@{
+      name = $name
+      scope = 'shared'
+      source = 'local:managed'
+      owner = 'local'
+      status = 'active'
+    }
+
+    if ($DryRun) {
+      Write-Output "[DRYRUN] Register missing manifest entry: $name"
+    } else {
+      $manifest.skills += $entry
+      Write-Output "[APPLY] Register missing manifest entry: $name"
+    }
+  }
+
+  if ((-not $DryRun) -and $missingNames.Count -gt 0) {
+    $manifest.updatedAt = (Get-Date).ToString('yyyy-MM-ddTHH:mm:ssK')
+    $manifest.skills = @($manifest.skills | Sort-Object name)
+    $manifest | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath $ManifestPath -Encoding UTF8
+  }
+
+  return @{
+    Manifest = $manifest
+    SharedExisting = $sharedExisting
+    MissingNames = $missingNames
+  }
+}
+
 function Ensure-DirLink {
   param(
     [string]$LinkPath,
@@ -112,7 +176,8 @@ if (-not (Test-Path $manifestPath)) {
   throw "Manifest not found: $manifestPath"
 }
 
-$manifest = Get-Content -Raw $manifestPath | ConvertFrom-Json
+$manifestSync = Sync-ManifestFromSharedRoot -ManifestPath $manifestPath -SharedRoot $agentsSkills
+$manifest = $manifestSync.Manifest
 $shared = @($manifest.skills | Where-Object { $_.scope -eq 'shared' -and $_.status -ne 'deprecated' -and ($IgnoreSkills -notcontains $_.name) } | ForEach-Object { $_.name })
 $codexOnly = @($manifest.skills | Where-Object { $_.scope -eq 'codex-only' -and $_.status -ne 'deprecated' -and ($IgnoreSkills -notcontains $_.name) } | ForEach-Object { $_.name })
 
