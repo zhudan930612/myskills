@@ -137,14 +137,14 @@
       "installedAt": "2026-03-27T09:43:55.751Z",
       "updatedAt": "2026-03-27T09:43:55.751Z"
     },
-"caveman": {
+    "caveman": {
       "source": "JuliusBrussee/caveman",
       "sourceType": "github",
       "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
       "skillPath": "caveman/SKILL.md",
       "skillFolderHash": "825e13085d1515fe67881b2123f3bf9b34c26154",
-      "installedAt": "2026-04-14T07:52:59.710Z",
-      "updatedAt": "2026-04-14T07:52:59.710Z"
+      "installedAt": "2026-04-14T07:52:59.71Z",
+      "updatedAt": "2026-04-14T07:52:59.71Z"
     },
     "caveman-compress": {
       "source": "JuliusBrussee/caveman",
@@ -190,6 +190,15 @@
       "skillFolderHash": "23f60d9b4304f20851469987c6e2c92242b94a45",
       "installedAt": "2026-04-30T05:54:17.706Z",
       "updatedAt": "2026-04-30T05:54:17.706Z"
+    },
+    "summarization": {
+      "source": "jwynia/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jwynia/agent-skills.git",
+      "skillPath": "skills/general/writing/revision/summarization/SKILL.md",
+      "skillFolderHash": "93f99a21a636590294ed5c630b5b097024707be6",
+      "installedAt": "2026-05-19T06:55:30.121Z",
+      "updatedAt": "2026-05-19T06:55:30.121Z"
     }
   },
   "dismissed": {
