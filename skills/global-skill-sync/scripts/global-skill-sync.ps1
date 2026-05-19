@@ -94,7 +94,7 @@ try {
 
 function Get-Names([string]$path) {
   if (-not (Test-Path $path)) { return @() }
-  return @((Get-ChildItem -Path $path -Directory -Force -ErrorAction SilentlyContinue | ForEach-Object { $_.Name }) | Sort-Object)
+  return @((Get-ChildItem -Path $path -Directory -Force -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne '.claude' } | ForEach-Object { $_.Name }) | Sort-Object)
 }
 
 $sharedNames = Get-Names $sharedPath
@@ -246,3 +246,4 @@ if ($hasIssue -and $report.findings.Count -gt 0) {
     $i++
   }
 }
+

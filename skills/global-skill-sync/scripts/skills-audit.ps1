@@ -35,7 +35,7 @@ $geminiSkills = $resolvedPaths.geminiPath
 $codexSkills = $resolvedPaths.codexPath
 
 # 技能忽略列表 - 这些技能会被审计脚本完全忽略
-$IgnoreSkills = @('superpowers')
+$IgnoreSkills = @('superpowers', '.claude')
 
 $findings = New-Object System.Collections.Generic.List[object]
 
@@ -348,3 +348,4 @@ if ($suggestedFixes.Count -eq 0) {
 }
 Write-Output ''
 Write-Output "Suggested exit code: $suggestedExitCode"
+

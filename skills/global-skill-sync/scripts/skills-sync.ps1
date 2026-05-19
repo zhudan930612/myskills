@@ -32,7 +32,7 @@ $geminiSkills = $resolvedPaths.geminiPath
 $codexSkills = $resolvedPaths.codexPath
 
 # 技能忽略列表 - 这些技能会被同步脚本完全忽略
-$IgnoreSkills = @('superpowers')
+$IgnoreSkills = @('superpowers', '.claude')
 
 function Invoke-Change {
   param(
@@ -205,3 +205,4 @@ foreach ($client in $clientDefs) {
 Write-Output "Sync completed. shared=$($shared.Count), codex-only=$($codexOnly.Count), dryRun=$($DryRun.IsPresent), synced=$(@($syncedClients).Count), skipped=$(@($skippedClients).Count)"
 Write-Output "Synced clients: $(if ($syncedClients.Count -gt 0) { $syncedClients -join ', ' } else { 'none' })"
 Write-Output "Skipped clients (missing dir): $(if ($skippedClients.Count -gt 0) { $skippedClients -join ', ' } else { 'none' })"
+
