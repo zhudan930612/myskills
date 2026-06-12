@@ -19,15 +19,6 @@
       "installedAt": "2026-02-06T05:33:44.626Z",
       "updatedAt": "2026-02-06T05:33:44.626Z"
     },
-    "ui-ux-pro-max": {
-      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
-      "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
-      "skillFolderHash": "986c64ad9b8e196a4a737c01872c2eda790daba1",
-      "installedAt": "2026-02-06T06:05:10.528Z",
-      "updatedAt": "2026-02-06T06:05:10.528Z"
-    },
     "pdf": {
       "source": "anthropics/skills",
       "sourceType": "github",
@@ -37,15 +28,6 @@
       "pluginName": "document-skills",
       "installedAt": "2026-02-24T07:56:56.3Z",
       "updatedAt": "2026-03-26T06:00:52.706Z"
-    },
-    "spreadsheet": {
-      "source": "openai/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/openai/skills.git",
-      "skillPath": "skills/.curated/spreadsheet/SKILL.md",
-      "skillFolderHash": "b145197343e4f94669359184b8d1357ecc732272",
-      "installedAt": "2026-03-11T06:16:58.724Z",
-      "updatedAt": "2026-03-11T06:16:58.724Z"
     },
     "skills-governance-audit": {
       "source": "local:C:\\Users\\zhudan\\.agents\\skills\\skills-governance-audit",
@@ -83,15 +65,6 @@
       "installedAt": "2026-03-25T16:26:00Z",
       "updatedAt": "2026-03-25T16:26:00Z"
     },
-    "agent-browser": {
-      "source": "vercel-labs/agent-browser",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/vercel-labs/agent-browser.git",
-      "skillPath": "skills/agent-browser/SKILL.md",
-      "skillFolderHash": "534183ba408692754ff5470166200d672209e96c",
-      "installedAt": "2026-02-06T06:03:05.691Z",
-      "updatedAt": "2026-02-06T06:03:05.691Z"
-    },
     "commit-work": {
       "source": "softaworks/agent-toolkit",
       "sourceType": "github",
@@ -100,33 +73,6 @@
       "skillFolderHash": "ac7c2ea0f24eb668f5b80e4f237efa4a90f12312",
       "installedAt": "2026-02-06T06:12:57.036Z",
       "updatedAt": "2026-02-06T06:12:57.036Z"
-    },
-    "mem-search": {
-      "source": "thedotmack/claude-mem",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/thedotmack/claude-mem.git",
-      "skillPath": "plugin/skills/mem-search/SKILL.md",
-      "skillFolderHash": "94a894bfb75dd3a679abbb018c5fb32c91317166",
-      "installedAt": "2026-03-19T04:56:05.593Z",
-      "updatedAt": "2026-03-19T04:56:05.593Z"
-    },
-    "product-requirements": {
-      "source": "cexll/myclaude",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/cexll/myclaude.git",
-      "skillPath": "skills/product-requirements/SKILL.md",
-      "skillFolderHash": "c394b089a3dc17b1b6e296712e1a6b51a9c4c3b9",
-      "installedAt": "2026-03-27T09:20:52.17Z",
-      "updatedAt": "2026-03-27T09:20:52.17Z"
-    },
-    "product-blueprint-architecture": {
-      "source": "local:C:/Users/zhudan/.agents/skills/product-blueprint-architecture",
-      "sourceType": "local",
-      "sourceUrl": "",
-      "skillPath": "SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-04-08T00:00:00+08:00",
-      "updatedAt": "2026-04-08T00:00:00+08:00"
     },
     "advanced-elicitation": {
       "source": "oimiragieo/agent-studio",
@@ -145,60 +91,6 @@
       "skillFolderHash": "825e13085d1515fe67881b2123f3bf9b34c26154",
       "installedAt": "2026-04-14T07:52:59.71Z",
       "updatedAt": "2026-04-14T07:52:59.71Z"
-    },
-    "caveman-compress": {
-      "source": "JuliusBrussee/caveman",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
-      "skillPath": "caveman-compress/SKILL.md",
-      "skillFolderHash": "85fc4f66717ab4f24a5b8d72fab3641b6be37a5f",
-      "installedAt": "2026-04-14T07:52:59.933Z",
-      "updatedAt": "2026-04-14T07:52:59.933Z"
-    },
-    "caveman-commit": {
-      "source": "JuliusBrussee/caveman",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
-      "skillPath": "skills/caveman-commit/SKILL.md",
-      "skillFolderHash": "f8d14c8de94e55b43de62b4b3081230248e2f481",
-      "installedAt": "2026-04-14T07:53:00.148Z",
-      "updatedAt": "2026-04-14T07:53:00.148Z"
-    },
-    "caveman-help": {
-      "source": "JuliusBrussee/caveman",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
-      "skillPath": "skills/caveman-help/SKILL.md",
-      "skillFolderHash": "0456947ac9539b1f8cba536f3b7a19d7a0f4eb91",
-      "installedAt": "2026-04-14T07:53:00.251Z",
-      "updatedAt": "2026-04-14T07:53:00.251Z"
-    },
-    "caveman-review": {
-      "source": "JuliusBrussee/caveman",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
-      "skillPath": "skills/caveman-review/SKILL.md",
-      "skillFolderHash": "2147719da5f81255dbf960d6ce46d5a7ee9d0860",
-      "installedAt": "2026-04-14T07:53:00.354Z",
-      "updatedAt": "2026-04-14T07:53:00.354Z"
-    },
-    "huashu-design": {
-      "source": "alchaincyf/huashu-design",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/alchaincyf/huashu-design.git",
-      "skillPath": "SKILL.md",
-      "skillFolderHash": "23f60d9b4304f20851469987c6e2c92242b94a45",
-      "installedAt": "2026-04-30T05:54:17.706Z",
-      "updatedAt": "2026-04-30T05:54:17.706Z"
-    },
-    "summarization": {
-      "source": "jwynia/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/jwynia/agent-skills.git",
-      "skillPath": "skills/general/writing/revision/summarization/SKILL.md",
-      "skillFolderHash": "93f99a21a636590294ed5c630b5b097024707be6",
-      "installedAt": "2026-05-19T06:55:30.121Z",
-      "updatedAt": "2026-05-19T06:55:30.121Z"
     }
   },
   "dismissed": {

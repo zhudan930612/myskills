@@ -1,5 +1,0 @@
-interface:
-  display_name: "业务相关方分析"
-  short_description: "根据业务材料生成相关方分析文档，梳理相关方、诉求、场景、架构要求和边界"
-  default_prompt: "Use $business-stakeholder-analysis to analyze stakeholders for the current business and produce a Markdown stakeholder analysis document."
-

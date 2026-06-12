@@ -1,0 +1,3 @@
+display_name: 生成与审查 AGENTS.md
+short_description: 响应“生成agents”“审查agents”等请求，生成或审查仓库 AGENTS.md
+default_prompt: 当用户提出“生成agents”“写agents”“审查agents”“检查 AGENTS.md”等请求时，依据 OpenAI 官方 harness engineering 文档，为仓库生成 AGENTS.md，或审查现有 AGENTS.md 是否符合“短地图、可路由、可校验”的原则。
