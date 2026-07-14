@@ -11,10 +11,12 @@ Make commits that are easy to review and safe to ship:
 - commits are logically scoped (split when needed)
 - commit messages describe what changed and why
 
-## Inputs to ask for (if missing)
-- Single commit or multiple commits? (If unsure: default to multiple small commits when there are unrelated changes.)
-- Commit style: Conventional Commits are required.
-- Any rules: max subject length, required scopes.
+## Default Strategy
+- **Always split into multiple commits** by logical boundaries (feature vs refactor, different directories/file groups, etc.) — do not ask the user.
+- Commit style: Conventional Commits are required (type(scope): summary).
+- Only ask the user when:
+  - They explicitly request a single/squash commit.
+  - Custom rules are needed (e.g., max subject length, required scopes).
 
 ## Commit Message Language Rule
 - Default to Chinese for commit messages (subject and body).
@@ -25,9 +27,9 @@ Make commits that are easy to review and safe to ship:
    - `git status`
    - `git diff` (unstaged)
    - If many changes: `git diff --stat`
-2) Decide commit boundaries (split if needed)
-   - Split by: feature vs refactor, backend vs frontend, formatting vs logic, tests vs prod code, dependency bumps vs behavior changes.
-   - If changes are mixed in one file, plan to use patch staging.
+2) Decide commit boundaries (default: split)
+   - Automatically split by logical boundaries: feature vs refactor, different directories/file groups, formatting vs logic, tests vs prod code, dependency bumps vs behavior changes.
+   - If changes are mixed in one file, use patch staging (`git add -p`).
 3) Stage only what belongs in the next commit
    - Prefer patch staging for mixed changes: `git add -p`
    - To unstage a hunk/file: `git restore --staged -p` or `git restore --staged <path>`
