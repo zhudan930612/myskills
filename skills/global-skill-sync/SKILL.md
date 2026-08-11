@@ -5,7 +5,7 @@ description: 执行跨客户端的全局技能同步并做一致性校验。触�
 
 # Global Skill Sync
 
-将共享技能源 `~/.agents/skills` 的变更同步到所有客户端，并输出标准化结果：目录解析结果、各目录数量、专属技能、审计摘要和最终结论。
+将共享技能源 `~/.agents/skills` 的变更同步到所有客户端（含 pi），并输出标准化结果：目录解析结果、各目录数量、专属技能、审计摘要和最终结论。
 
 ## Trigger Phrases
 - 同步技能
@@ -42,6 +42,7 @@ description: 执行跨客户端的全局技能同步并做一致性校验。触�
   - `-CursorPath`
   - `-GeminiPath`
   - `-CodexPath`
+  - `-PiPath`
 - 支持的环境变量：
   - `SKILL_SYNC_HOME_DIR`
   - `AGENTS_HOME`
@@ -50,6 +51,8 @@ description: 执行跨客户端的全局技能同步并做一致性校验。触�
   - `CURSOR_SKILLS_DIR`
   - `GEMINI_SKILLS_DIR`
   - `CODEX_SKILLS_DIR`
+  - `PI_SKILLS_DIR` / `SKILL_SYNC_PI_PATH`
+- pi 目录默认 `~/.pi/agent/skills`（全部为指向共享源的 junction，无专属技能）
 
 ## Output Contract
 - Resolved Paths（本次执行实际命中的目录）

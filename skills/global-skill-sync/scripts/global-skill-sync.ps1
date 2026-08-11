@@ -9,7 +9,8 @@ param(
   [string]$ClaudePath,
   [string]$CursorPath,
   [string]$GeminiPath,
-  [string]$CodexPath
+  [string]$CodexPath,
+  [string]$PiPath
 )
 
 $ErrorActionPreference = 'Stop'
@@ -34,12 +35,14 @@ $claudePath = $resolvedPaths.claudePath
 $cursorPath = $resolvedPaths.cursorPath
 $geminiPath = $resolvedPaths.geminiPath
 $codexPath = $resolvedPaths.codexPath
+$piPath = $resolvedPaths.piPath
 
 $clientDefs = @(
   [pscustomobject]@{ name = 'claude'; path = $claudePath },
   [pscustomobject]@{ name = 'cursor'; path = $cursorPath },
   [pscustomobject]@{ name = 'gemini'; path = $geminiPath },
-  [pscustomobject]@{ name = 'codex'; path = $codexPath }
+  [pscustomobject]@{ name = 'codex'; path = $codexPath },
+  [pscustomobject]@{ name = 'pi'; path = $piPath }
 )
 
 if (-not (Test-Path $syncScript)) { throw "Missing script: $syncScript" }
@@ -64,6 +67,7 @@ $commonArgs = @{
   CursorPath = $resolvedPaths.cursorPath
   GeminiPath = $resolvedPaths.geminiPath
   CodexPath = $resolvedPaths.codexPath
+  PiPath = $resolvedPaths.piPath
 }
 
 try {
@@ -102,6 +106,7 @@ $claudeNames = Get-Names $claudePath
 $cursorNames = Get-Names $cursorPath
 $geminiNames = Get-Names $geminiPath
 $codexNames = Get-Names $codexPath
+$piNames = Get-Names $piPath
 
 $sharedSet = @{}
 foreach ($n in $sharedNames) { $sharedSet[$n] = $true }
@@ -119,6 +124,7 @@ $dedicated = [ordered]@{
   cursor = Get-Dedicated $cursorNames $sharedSet
   gemini = Get-Dedicated $geminiNames $sharedSet
   codex = Get-Dedicated $codexNames $sharedSet
+  pi = Get-Dedicated $piNames $sharedSet
 }
 
 $counts = [ordered]@{
@@ -127,6 +133,7 @@ $counts = [ordered]@{
   cursor = $cursorNames.Count
   gemini = $geminiNames.Count
   codex = $codexNames.Count
+  pi = $piNames.Count
 }
 
 function Cn([int[]]$codes) {
@@ -191,6 +198,7 @@ Write-Output "- claudePath: $($resolvedPaths.claudePath)"
 Write-Output "- cursorPath: $($resolvedPaths.cursorPath)"
 Write-Output "- geminiPath: $($resolvedPaths.geminiPath)"
 Write-Output "- codexPath: $($resolvedPaths.codexPath)"
+Write-Output "- piPath: $($resolvedPaths.piPath)"
 Write-Output ''
 
 Write-Output "## $TXT_SYNC_STATUS"
@@ -204,6 +212,7 @@ Write-Output "- claude (~/.claude/skills): $($counts.claude)"
 Write-Output "- cursor (~/.cursor/skills): $($counts.cursor)"
 Write-Output "- gemini (~/.gemini/skills): $($counts.gemini)"
 Write-Output "- codex (~/.codex/skills): $($counts.codex)"
+Write-Output "- pi (~/.pi/agent/skills): $($counts.pi)"
 Write-Output ''
 
 Write-Output "## $TXT_DEDICATED_SKILLS"
@@ -211,6 +220,7 @@ Write-Output ("- claude: " + ($(if($dedicated.claude.Count){$dedicated.claude -j
 Write-Output ("- cursor: " + ($(if($dedicated.cursor.Count){$dedicated.cursor -join ', '} else {$TXT_NONE})))
 Write-Output ("- gemini: " + ($(if($dedicated.gemini.Count){$dedicated.gemini -join ', '} else {$TXT_NONE})))
 Write-Output ("- codex: " + ($(if($dedicated.codex.Count){$dedicated.codex -join ', '} else {$TXT_NONE})))
+Write-Output ("- pi: " + ($(if($dedicated.pi.Count){$dedicated.pi -join ', '} else {$TXT_NONE})))
 Write-Output ''
 
 Write-Output "## $TXT_AUDIT_SUMMARY"

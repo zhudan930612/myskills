@@ -1,6 +1,13 @@
 {
+  "permissions": {
+    "allow": [
+      "Skill(update-config)",
+      "Bash(python *)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\zhudan\\\\.agents\\\\skills\\\\global-skill-sync\\\\scripts\\\\global-skill-sync.ps1\")"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "chrome-devtools"
-  ],
-  "enableAllProjectMcpServers": true
+  ]
 }

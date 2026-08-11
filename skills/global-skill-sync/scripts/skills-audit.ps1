@@ -9,7 +9,8 @@ param(
   [string]$ClaudePath,
   [string]$CursorPath,
   [string]$GeminiPath,
-  [string]$CodexPath
+  [string]$CodexPath,
+  [string]$PiPath
 )
 
 $ErrorActionPreference = 'Stop'
@@ -24,7 +25,8 @@ $resolvedPaths = Resolve-SkillSyncPaths `
   -ClaudePath $ClaudePath `
   -CursorPath $CursorPath `
   -GeminiPath $GeminiPath `
-  -CodexPath $CodexPath
+  -CodexPath $CodexPath `
+  -PiPath $PiPath
 
 $agentsSkills = $resolvedPaths.sharedPath
 $manifestPath = $resolvedPaths.manifestPath
@@ -33,6 +35,7 @@ $claudeSkills = $resolvedPaths.claudePath
 $cursorSkills = $resolvedPaths.cursorPath
 $geminiSkills = $resolvedPaths.geminiPath
 $codexSkills = $resolvedPaths.codexPath
+$piSkills = $resolvedPaths.piPath
 
 # 技能忽略列表 - 这些技能会被审计脚本完全忽略
 $IgnoreSkills = @('superpowers', '.claude')
@@ -169,9 +172,10 @@ if ($manifest) {
   Audit-ClientLinks -ClientName 'Cursor' -ClientPath $cursorSkills -ExpectedShared $shared -SharedRoot $agentsSkills
   Audit-ClientLinks -ClientName 'Gemini' -ClientPath $geminiSkills -ExpectedShared $shared -SharedRoot $agentsSkills
   Audit-ClientLinks -ClientName 'Codex' -ClientPath $codexSkills -ExpectedShared $shared -SharedRoot $agentsSkills -AllowedExtraNames (@('.system') + $codexOnly)
+  Audit-ClientLinks -ClientName 'Pi' -ClientPath $piSkills -ExpectedShared $shared -SharedRoot $agentsSkills
 }
 
-$roots = @($agentsSkills, $claudeSkills, $cursorSkills, $geminiSkills, $codexSkills)
+$roots = @($agentsSkills, $claudeSkills, $cursorSkills, $geminiSkills, $codexSkills, $piSkills)
 $records = New-Object System.Collections.Generic.List[object]
 foreach ($root in $roots) {
   if (-not (Test-Path $root)) { continue }

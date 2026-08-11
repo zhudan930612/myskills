@@ -7,7 +7,8 @@ param(
   [string]$ClaudePath,
   [string]$CursorPath,
   [string]$GeminiPath,
-  [string]$CodexPath
+  [string]$CodexPath,
+  [string]$PiPath
 )
 
 $ErrorActionPreference = 'Stop'
@@ -22,7 +23,8 @@ $resolvedPaths = Resolve-SkillSyncPaths `
   -ClaudePath $ClaudePath `
   -CursorPath $CursorPath `
   -GeminiPath $GeminiPath `
-  -CodexPath $CodexPath
+  -CodexPath $CodexPath `
+  -PiPath $PiPath
 
 $agentsSkills = $resolvedPaths.sharedPath
 $manifestPath = $resolvedPaths.manifestPath
@@ -30,6 +32,7 @@ $claudeSkills = $resolvedPaths.claudePath
 $cursorSkills = $resolvedPaths.cursorPath
 $geminiSkills = $resolvedPaths.geminiPath
 $codexSkills = $resolvedPaths.codexPath
+$piSkills = $resolvedPaths.piPath
 
 # 技能忽略列表 - 这些技能会被同步脚本完全忽略
 $IgnoreSkills = @('superpowers', '.claude')
@@ -185,7 +188,8 @@ $clientDefs = @(
   @{ name = 'Claude'; path = $claudeSkills; extras = @() },
   @{ name = 'Cursor'; path = $cursorSkills; extras = @() },
   @{ name = 'Gemini'; path = $geminiSkills; extras = @() },
-  @{ name = 'Codex'; path = $codexSkills; extras = @('.system') + $codexOnly }
+  @{ name = 'Codex'; path = $codexSkills; extras = @('.system') + $codexOnly },
+  @{ name = 'Pi'; path = $piSkills; extras = @() }
 )
 
 $syncedClients = New-Object System.Collections.Generic.List[string]

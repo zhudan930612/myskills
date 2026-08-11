@@ -56,15 +56,6 @@
       "installedAt": "2026-03-23T20:01:21.932244+08:00",
       "updatedAt": "2026-03-23T20:01:21.932244+08:00"
     },
-    "resume-eval": {
-      "source": "local:C:/Users/zhudan/.agents/skills/resume-eval",
-      "sourceType": "local",
-      "sourceUrl": "",
-      "skillPath": "SKILL.md",
-      "skillFolderHash": "",
-      "installedAt": "2026-03-25T16:26:00Z",
-      "updatedAt": "2026-03-25T16:26:00Z"
-    },
     "commit-work": {
       "source": "softaworks/agent-toolkit",
       "sourceType": "github",
@@ -83,14 +74,59 @@
       "installedAt": "2026-03-27T09:43:55.751Z",
       "updatedAt": "2026-03-27T09:43:55.751Z"
     },
-    "caveman": {
-      "source": "JuliusBrussee/caveman",
+    "neat-freak": {
+      "source": "KKKKhazix/khazix-skills",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
-      "skillPath": "caveman/SKILL.md",
-      "skillFolderHash": "825e13085d1515fe67881b2123f3bf9b34c26154",
-      "installedAt": "2026-04-14T07:52:59.71Z",
-      "updatedAt": "2026-04-14T07:52:59.71Z"
+      "sourceUrl": "https://github.com/KKKKhazix/khazix-skills.git",
+      "skillPath": "neat-freak/SKILL.md",
+      "skillFolderHash": "f1bff4cf56da5baa4fa52d021747facb2b5eb9b2",
+      "installedAt": "2026-07-20T07:21:14.929Z",
+      "updatedAt": "2026-07-20T07:21:14.929Z"
+    },
+    "leader": {
+      "source": "KKKKhazix/khazix-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/KKKKhazix/khazix-skills.git",
+      "skillPath": "leader/SKILL.md",
+      "skillFolderHash": "0a0f82e3c21ddde847de286704dd73212c86c2bb",
+      "installedAt": "2026-07-27T02:53:14.561Z",
+      "updatedAt": "2026-07-27T02:53:14.561Z"
+    },
+    "minimalist-ui": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/taste-skill.git",
+      "skillPath": "skills/minimalist-skill/SKILL.md",
+      "skillFolderHash": "5509c012862cda27e2ed7efae89ed940ecc53add",
+      "installedAt": "2026-08-04T08:34:43.560Z",
+      "updatedAt": "2026-08-04T08:34:43.560Z"
+    },
+    "redesign-existing-projects": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/taste-skill.git",
+      "skillPath": "skills/redesign-skill/SKILL.md",
+      "skillFolderHash": "d9cffe56d26d4af7687299e391a7be1cfaf46c1b",
+      "installedAt": "2026-08-04T08:34:43.564Z",
+      "updatedAt": "2026-08-04T08:34:43.564Z"
+    },
+    "high-end-visual-design": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/taste-skill.git",
+      "skillPath": "skills/soft-skill/SKILL.md",
+      "skillFolderHash": "1b5943432ddd1b980206968c529a323cc992dbec",
+      "installedAt": "2026-08-04T08:34:43.565Z",
+      "updatedAt": "2026-08-04T08:34:43.565Z"
+    },
+    "design-taste-frontend": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/Leonxlnx/taste-skill.git",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "skillFolderHash": "a6d128e53b4ec0238baee751dde33bf707adb5ec",
+      "installedAt": "2026-08-04T08:34:43.566Z",
+      "updatedAt": "2026-08-04T08:34:43.566Z"
     }
   },
   "dismissed": {

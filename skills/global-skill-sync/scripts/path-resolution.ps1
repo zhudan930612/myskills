@@ -53,7 +53,8 @@ function Resolve-SkillSyncPaths {
     [string]$ClaudePath,
     [string]$CursorPath,
     [string]$GeminiPath,
-    [string]$CodexPath
+    [string]$CodexPath,
+    [string]$PiPath
   )
 
   $defaults = Get-SkillSyncDefaultPaths -ScriptPath $ScriptPath
@@ -117,6 +118,14 @@ function Resolve-SkillSyncPaths {
   )
   $resolvedCodexPath = Normalize-SkillSyncPath $resolvedCodexPath
 
+  $resolvedPiPath = Get-SkillSyncFirstValue @(
+    $PiPath,
+    $env:PI_SKILLS_DIR,
+    $env:SKILL_SYNC_PI_PATH,
+    $(if ($resolvedHomeDir) { Join-Path $resolvedHomeDir '.pi/agent/skills' })
+  )
+  $resolvedPiPath = Normalize-SkillSyncPath $resolvedPiPath
+
   [pscustomobject]@{
     scriptPath = $defaults.scriptPath
     scriptDir = $defaults.scriptDir
@@ -130,6 +139,7 @@ function Resolve-SkillSyncPaths {
     cursorPath = $resolvedCursorPath
     geminiPath = $resolvedGeminiPath
     codexPath = $resolvedCodexPath
+    piPath = $resolvedPiPath
   }
 }
 
@@ -146,6 +156,7 @@ function Convert-SkillSyncResolvedPathsToMap {
     cursorPath = $ResolvedPaths.cursorPath
     geminiPath = $ResolvedPaths.geminiPath
     codexPath = $ResolvedPaths.codexPath
+    piPath = $ResolvedPaths.piPath
   }
 }
 
@@ -162,4 +173,5 @@ function Write-SkillSyncResolvedPaths {
   Write-Output "- cursorPath: $($ResolvedPaths.cursorPath)"
   Write-Output "- geminiPath: $($ResolvedPaths.geminiPath)"
   Write-Output "- codexPath: $($ResolvedPaths.codexPath)"
+  Write-Output "- piPath: $($ResolvedPaths.piPath)"
 }
