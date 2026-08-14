@@ -55,15 +55,6 @@
       "installedAt": "2026-02-06T06:12:57.036Z",
       "updatedAt": "2026-02-06T06:12:57.036Z"
     },
-    "advanced-elicitation": {
-      "source": "oimiragieo/agent-studio",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/oimiragieo/agent-studio.git",
-      "skillPath": ".claude/skills/advanced-elicitation/SKILL.md",
-      "skillFolderHash": "51097d51d7de84f77af09c2b87389587684867a3",
-      "installedAt": "2026-03-27T09:43:55.751Z",
-      "updatedAt": "2026-03-27T09:43:55.751Z"
-    },
     "neat-freak": {
       "source": "KKKKhazix/khazix-skills",
       "sourceType": "github",

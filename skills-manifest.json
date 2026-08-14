@@ -3,13 +3,6 @@
     "updatedAt": "2026-08-14T17:12:10+08:00",
     "skills": [
         {
-            "name": "advanced-elicitation",
-            "scope": "shared",
-            "source": "lock:advanced-elicitation",
-            "owner": "shared",
-            "status": "active"
-        },
-        {
             "name": "agent-reach",
             "scope": "shared",
             "source": "local:managed",
