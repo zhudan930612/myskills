@@ -1,4 +1,4 @@
-{
+﻿{
   "version": 3,
   "skills": {
     "find-skills": {
@@ -18,16 +18,6 @@
       "skillFolderHash": "928950704df8a8b885c03de5da626331e6f29cf8",
       "installedAt": "2026-02-06T05:33:44.626Z",
       "updatedAt": "2026-02-06T05:33:44.626Z"
-    },
-    "pdf": {
-      "source": "anthropics/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/anthropics/skills.git",
-      "skillPath": "skills/pdf/SKILL.md",
-      "skillFolderHash": "6369f4649de69bd6857c9bc3b058a77206009238",
-      "pluginName": "document-skills",
-      "installedAt": "2026-02-24T07:56:56.3Z",
-      "updatedAt": "2026-03-26T06:00:52.706Z"
     },
     "skills-governance-audit": {
       "source": "local:C:\\Users\\zhudan\\.agents\\skills\\skills-governance-audit",

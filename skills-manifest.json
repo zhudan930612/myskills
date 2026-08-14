@@ -1,139 +1,188 @@
 ﻿{
-    "version":  1,
-    "updatedAt":  "2026-08-11T15:46:20+08:00",
-    "skills":  [
-                   {
-                       "name":  "advanced-elicitation",
-                       "scope":  "shared",
-                       "source":  "lock:advanced-elicitation",
-                       "owner":  "shared",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "agent-reach",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "author-agents-md",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "commit-work",
-                       "scope":  "shared",
-                       "source":  "lock:commit-work",
-                       "owner":  "shared",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "design-taste-frontend",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "find-skills",
-                       "scope":  "shared",
-                       "source":  "lock:find-skills",
-                       "owner":  "shared",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "frontend-design",
-                       "scope":  "shared",
-                       "source":  "lock:frontend-design",
-                       "owner":  "shared",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "global-skill-sync",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "grill-me",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "high-end-visual-design",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "i-have-adhd",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "impeccable",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "leader",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "minimalist-ui",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "neat-freak",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "pdf",
-                       "scope":  "shared",
-                       "source":  "lock:pdf",
-                       "owner":  "shared",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "redesign-existing-projects",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "review-requirements",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   },
-                   {
-                       "name":  "skills-governance-audit",
-                       "scope":  "shared",
-                       "source":  "local:managed",
-                       "owner":  "local",
-                       "status":  "active"
-                   }
-               ]
+    "version": 1,
+    "updatedAt": "2026-08-14T17:12:10+08:00",
+    "skills": [
+        {
+            "name": "advanced-elicitation",
+            "scope": "shared",
+            "source": "lock:advanced-elicitation",
+            "owner": "shared",
+            "status": "active"
+        },
+        {
+            "name": "agent-reach",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "api-and-interface-design",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "author-agents-md",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "codebase-design",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "commit-work",
+            "scope": "shared",
+            "source": "lock:commit-work",
+            "owner": "shared",
+            "status": "active"
+        },
+        {
+            "name": "design-taste-frontend",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "dev-flow",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "find-skills",
+            "scope": "shared",
+            "source": "lock:find-skills",
+            "owner": "shared",
+            "status": "active"
+        },
+        {
+            "name": "frontend-design",
+            "scope": "shared",
+            "source": "lock:frontend-design",
+            "owner": "shared",
+            "status": "active"
+        },
+        {
+            "name": "global-skill-sync",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "grill-me",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "herdr",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "high-end-visual-design",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "i-have-adhd",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "impeccable",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "improve-codebase-architecture",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "leader",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "minimalist-ui",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "neat-freak",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "prd-md",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "redesign-existing-projects",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "review-requirements",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "security-and-hardening",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "skills-governance-audit",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        },
+        {
+            "name": "tdd",
+            "scope": "shared",
+            "source": "local:managed",
+            "owner": "local",
+            "status": "active"
+        }
+    ]
 }
