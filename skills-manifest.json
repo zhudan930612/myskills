@@ -40,7 +40,7 @@
         {
             "name": "design-taste-frontend",
             "scope": "shared",
-            "source": "local:managed",
+            "source": "lock:design-taste-frontend",
             "owner": "local",
             "status": "active"
         },
@@ -89,7 +89,7 @@
         {
             "name": "high-end-visual-design",
             "scope": "shared",
-            "source": "local:managed",
+            "source": "lock:high-end-visual-design",
             "owner": "local",
             "status": "active"
         },
@@ -117,21 +117,21 @@
         {
             "name": "leader",
             "scope": "shared",
-            "source": "local:managed",
+            "source": "lock:leader",
             "owner": "local",
             "status": "active"
         },
         {
             "name": "minimalist-ui",
             "scope": "shared",
-            "source": "local:managed",
+            "source": "lock:minimalist-ui",
             "owner": "local",
             "status": "active"
         },
         {
             "name": "neat-freak",
             "scope": "shared",
-            "source": "local:managed",
+            "source": "lock:neat-freak",
             "owner": "local",
             "status": "active"
         },
@@ -145,7 +145,7 @@
         {
             "name": "redesign-existing-projects",
             "scope": "shared",
-            "source": "local:managed",
+            "source": "lock:redesign-existing-projects",
             "owner": "local",
             "status": "active"
         },
