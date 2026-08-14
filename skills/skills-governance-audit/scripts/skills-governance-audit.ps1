@@ -40,6 +40,13 @@ $clientDefs = @(
     logs = @(
       [pscustomobject]@{ type = 'jsonl'; path = Join-Path $homeDir '.codex/history.jsonl'; textField = 'text' }
     )
+  },
+  [pscustomobject]@{
+    name = 'pi'
+    skillsPath = Join-Path $homeDir '.pi/agent/skills'
+    logs = @(
+      [pscustomobject]@{ type = 'jsonl'; path = Join-Path $homeDir '.pi/agent/skill-usage.jsonl'; textField = 'skill' }
+    )
   }
 )
 
@@ -143,6 +150,7 @@ foreach ($skill in $sharedSkills) {
       cursor = 0
       gemini = 0
       codex = 0
+      pi = 0
     }
   }
   $escaped = [regex]::Escape($skill)
@@ -249,6 +257,7 @@ $usageRows = @(
       cursor = [int]$usage[$_].byClient.cursor
       gemini = [int]$usage[$_].byClient.gemini
       codex = [int]$usage[$_].byClient.codex
+      pi = [int]$usage[$_].byClient.pi
     }
   } | Sort-Object total, name -Descending
 )
@@ -358,7 +367,7 @@ Write-Output ''
 
 Write-Output '## Skill Usage Counts'
 foreach ($row in $usageRows) {
-  Write-Output "- $($row.name): total=$($row.total), claude=$($row.claude), cursor=$($row.cursor), gemini=$($row.gemini), codex=$($row.codex)"
+  Write-Output "- $($row.name): total=$($row.total), claude=$($row.claude), cursor=$($row.cursor), gemini=$($row.gemini), codex=$($row.codex), pi=$($row.pi)"
 }
 Write-Output ''
 
