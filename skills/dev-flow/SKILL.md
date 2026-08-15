@@ -10,14 +10,15 @@ goal 模式激活且目标指向已定稿需求文档时（goal 文本引用需�
 
 ## Procedure
 1. 准备：读需求文档 + 验收清单，确认落盘位置（项目既有约定优先，见 references/agent-instructions.md），确认开发顺序（按 A2 依赖）；**若是需求变更后的再开发，先读 agent-instructions.md 的"需求变更影响评估与回归范围"，按影响清单开发，不直接动手**
-2. 编码阶段：启动编码 subagent（用 worker agent，async:true，fresh context，timeoutMs = 86400000ms（24 小时），禁止依赖默认 30 分钟），指令模板见 references/agent-instructions.md；编码 agent 只编码+自测+模块提交，禁止改需求文档和验收清单
-3. 验收阶段：编码 subagent 报告完成后，启动验收 subagent（用 reviewer agent，async:true，fresh context，timeoutMs = 86400000ms（24 小时），禁止依赖默认 30 分钟），指令模板见 references/agent-instructions.md；验收 agent 只看验收清单+运行命令，不看实现
-4. 判断阶段：主 agent 读验收报告 → 全部通过（人工项已确认）→ 阶段5（质量审查）；有失败 → 按失败分类（编码 bug / 需求缺陷 / 环境数据）+ 输出失败原因摘要 → 对应处理（回编码带失败清单 / 回 prd-md 变更 / 处理环境重验）
-5. 质量审查阶段：验收全部通过后，启动质量审查 subagent（用 reviewer agent，async:true，fresh context，timeoutMs = 86400000ms（24 小时））——与验收 agent 相反，**专门读实现代码**，按 references/agent-instructions.md 的质量审查指令模板执行，输出质量审查报告（问题分级：必须修/建议；含范围外改动检测——实现不得超出验收清单与需求范围）。必须修项 → 回编码 agent 带问题清单修复 → 重跑相关测试 → 复检；建议项 → 记录，询问用户是否本期处理
-6. 完成：DoD 满足 + 必须修项闭环 → 验收报告与质量审查报告归档（默认 <项目文档目录>/archive/验收记录-<名称>-V<N>.md 与 质量审查-<名称>-V<N>.md）→ 向用户汇报 → goal 完成
-7. 循环控制：编码→验收 ≤ 3 轮；同一验收项连续失败 2 次提前升级给用户；每轮必出失败原因摘要；超限停止循环汇总给用户决策
-8. 并行：多个独立需求点可拆多编码 agent 并行（worktree 隔离），默认单 agent 按依赖顺序执行
-9. 架构决定登记：编码 agent / 质量审查 agent 的报告中若出现架构级取舍（影响未来开发、以后难改的技术决定）→ 主 agent 按判定标准（以后难改 + 有明显取舍）写 docs/adr/NNNN-<slug>.md 一条或提示用户决策，不静默丢弃；普通实现细节不写，不为写而写
+2. 任务清单生成：按 references/agent-instructions.md 的"任务清单生成（编码前，ticket-map 格式）"生成 tasks 清单（# | 优先级 | 任务纵向切片 | 依赖 | 对应验收项），作为编码 agent 输入与范围基准（与质量审查的范围外改动检测共用）
+3. 编码阶段：启动编码 subagent（用 worker agent，async:true，fresh context，timeoutMs = 86400000ms（24 小时），禁止依赖默认 30 分钟），指令模板见 references/agent-instructions.md；编码 agent 只编码+自测+模块提交，禁止改需求文档和验收清单
+4. 验收阶段：编码 subagent 报告完成后，启动验收 subagent（用 reviewer agent，async:true，fresh context，timeoutMs = 86400000ms（24 小时），禁止依赖默认 30 分钟），指令模板见 references/agent-instructions.md；验收 agent 只看验收清单、需求点清单+运行命令，不看实现（含覆盖度反向核对）
+5. 判断阶段：主 agent 读验收报告 → 全部通过（人工项已确认）→ 阶段6（质量审查）；有失败 → 按失败分类（编码 bug / 需求缺陷 / 环境数据）+ 输出失败原因摘要 → 对应处理（回编码带失败清单 / 回 prd-md 变更 / 处理环境重验）
+6. 质量审查阶段：验收全部通过后，启动质量审查 subagent（用 reviewer agent，async:true，fresh context，timeoutMs = 86400000ms（24 小时））——与验收 agent 相反，**专门读实现代码**，按 references/agent-instructions.md 的质量审查指令模板执行，输出质量审查报告（问题分级：必须修/建议；含范围外改动检测——实现不得超出 tasks 清单与需求范围）。必须修项 → 回编码 agent 带问题清单修复 → 重跑相关测试 → 复检；建议项 → 记录，询问用户是否本期处理
+7. 完成：DoD 满足 + 必须修项闭环 → 验收报告与质量审查报告归档（默认 <项目文档目录>/archive/验收记录-<名称>-V<N>.md 与 质量审查-<名称>-V<N>.md）→ 向用户汇报 → goal 完成
+8. 循环控制：编码→验收 ≤ 3 轮；同一验收项连续失败 2 次提前升级给用户；每轮必出失败原因摘要；超限停止循环汇总给用户决策
+9. 并行：多个独立需求点可拆多编码 agent 并行（worktree 隔离），默认单 agent 按依赖顺序执行
+10. 架构决定登记：编码 agent / 质量审查 agent 的报告中若出现架构级取舍（影响未来开发、以后难改的技术决定）→ 主 agent 按判定标准（以后难改 + 有明显取舍）写 docs/adr/NNNN-<slug>.md 一条或提示用户决策，不静默丢弃；普通实现细节不写，不为写而写
 
 ## Pitfalls
 - 主 agent 是编排者，不亲自写代码（防自证陷阱）
