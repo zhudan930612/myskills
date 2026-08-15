@@ -1,8 +1,35 @@
 ---
-name: grill-me
-description: Interview the user relentlessly about a plan, document, content piece, or design until reaching shared understanding and resolving each branch of the decision tree. Use when the user wants to stress-test a plan, get grilled on their design, or says “挑战/拷打这个方案、文档、内容、设计” or “grill me”.
+name: "grill-me"
+description: "拷打/深度审查技能：以魔鬼代言人方式对方案、文档、内容或设计进行无情追问，沿决策树逐支审查，暴露隐藏假设、未验证前提与依赖阻塞点，直到达成共识。达成共识后必须把确认结果落盘（统一用词 + 重要 ADR），不能只留在聊天里。触发：挑战/拷打这个方案、文档、内容、设计；grill me；stress-test this。"
+version: 2
+created: "2026-08-14"
+updated: "2026-08-15"
 ---
+## When to Use
+用户想对方案/文档/内容/设计做压力测试或深度审查，说出"挑战/拷打这个方案、文档、内容、设计"、"grill me"、"stress-test this" 等。审查对象是需求/产品方案时，拷打结果应衔接 prd-md 或需求文档；是技术方案时衔接开发流程（plan）。
 
-Interview the user relentlessly about every aspect of this plan, document, content piece, or design until you reach a shared understanding. Walk down each branch of the decision tree, resolving dependencies between decisions one by one.
+## Procedure
+1. 材料分析：先理解被拷打的材料（计划/文档/设计/内容），识别核心主张与结构
+2. 探索优先：能用代码库、文档、已有材料回答的问题先探索，不重复提问
+3. 决策树追问：对每个决策点多轮质询，沿决策树逐支走查；优先暴露——核心假设有无支撑、失败路径有无备选、依赖关系是否必须前期解决、口径/定义是否有歧义、范围边界是否清晰
+4. 依赖梳理：理清决策间依赖，识别关键阻塞点，逐个消解
+5. 共识确认：持续追问直到用户对材料有共同理解、决策树所有分支走完；每轮关键结论向用户复述确认
+6. 落盘（硬性环节，不得跳过）：共识达成后，把确认结果写进仓库，不留存于聊天——
+   - 统一用词/口径 → 写入项目术语文档（项目既有约定优先；无约定时用 `CONTEXT.md` 或并入 prd-md 需求文档 A3 术语表，同源一致）
+   - 重要决定 → 写 ADR（`docs/adr/NNNN-<slug>.md`，格式：背景 → 决定 → 原因 → 被否方案）；**只记"以后难改 + 有明显取舍"的决定**，小选择不记
+   - 判定标准：这个决定以后重选成本高吗？存在明显权衡吗？都满足才值得 ADR
+7. 衔接出口：明确告知用户拷打产物落盘在哪、接下来衔接什么（喂 prd-md 定稿 / 进开发 plan / 直接作为决策记录）；若产物将用于需求定稿，建议用户走 prd-md 或直接进入开发流程
 
-If a question can be answered by exploring the codebase, documents, or provided materials, explore them instead.
+## Pitfalls
+- 禁止"拷打完就结束"：结果只留在聊天里 = 下次会话丢失上下文，这是本技能最该避免的（Spec Coding 核心教训）
+- 禁止过度记录：不是每个小选择都写 ADR，只记"以后难改 + 有明显取舍"的
+- 禁止替用户做决定：拷打暴露问题即可，选择权在用户
+- 禁止空洞追问：每个问题要可回答、指向具体缺口；能查材料的不问用户
+- 落盘位置先查项目既有约定（AGENTS.md / docs 结构），无约定才用默认
+
+## Verification
+1. 决策树所有分支已走完，无遗留未解决假设
+2. 共识已达成，关键结论经过用户复述确认
+3. 统一用词/重要决定已落盘（术语文档或 ADR 文件存在，路径可查）
+4. 每个 ADR 都符合"以后难改 + 有明显取舍"标准，无流水账式记录
+5. 衔接出口明确：拷打产物接下来喂给哪个流程/文档已说明
