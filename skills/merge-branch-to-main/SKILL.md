@@ -1,9 +1,9 @@
 ---
 name: "merge-branch-to-main"
 description: "把功能分支合并到 main 的完整流程（管理员验收制协作模型）：管理员可走本地合并直接 push（不走 PR，enforce_admins=false 已允许），或走 PR + code owner 批准；协作者必须走 PR。触发：合并分支、合分支、合并到主分支、把 XX 合到 main、merge to main、提 PR、合并后删除分支。"
-version: 1
+version: 2
 created: "2026-08-21"
-updated: "2026-08-21"
+updated: "2026-08-22"
 ---
 ## When to Use
 触发词分流：说「**合并分支 / 合并到 main / merge to main / 把 XX 合到 main / 合分支**」→ 直接合并不走 PR（路径 A，管理员快捷合并）；说「**提 PR / 走 PR / 提合并请求**」→ 走 PR 流程（路径 B）。当前分支是 main 时先确认要合并哪个分支/哪个 PR。适用于 main 受保护（必须 PR + code owner review）或管理员可 bypass 的仓库；非受保护仓库可直接本地 merge + push（跳过 PR 步骤）。
@@ -12,10 +12,10 @@ updated: "2026-08-21"
 1. 前置检查：git status --short 必须干净（有未提交改动则停下让用户处理）；确认当前分支与角色（管理员 / 协作者 write）；git fetch origin 获取远程最新
 2. 同步基线：git checkout main + git pull --ff-only；若本地 main 有未推送提交，先向用户说明（避免把未验收的本地提交随合并推出去）
 3. **路径 A：管理员快捷合并（直接合并不走 PR）**——触发词「合并分支/合并到 main/merge to main/把 XX 合到 main」；仅当仓库 enforce_admins=false（管理员可 bypass）且用户确认：git merge <分支> --no-ff（保留功能分支历史；要线性历史用 --ff-only）→ 冲突处理（步骤 5）→ 验证（步骤 6）→ git push origin main 直接推送（受保护 main 对非管理员仍拒绝）
-4. **路径 B：标准 PR 流程（走 PR）**——触发词「提 PR/走 PR/提合并请求」；协作者自己提 PR（推荐，管理员 Review→Approve→Merge 走 code owner review）；或管理员帮提（PR 作者=管理员不能自批，合并走 admin bypass）；**合并后远程分支由 GitHub 自动删除**（仓库已配置 delete_branch_on_merge=true，无需手动操作）
+4. **路径 B：标准 PR 流程（走 PR）**——触发词「提 PR/走 PR/提合并请求」；协作者自己提 PR（推荐，管理员 Review→Approve→Merge 走 code owner review）；或管理员帮提（PR 作者=管理员不能自批，合并走 admin bypass）。**合并命令 `gh pr merge <PR号> --delete-branch` 会同时自动删除远端分支和本地工作分支**（远端删除也由仓库 `delete_branch_on_merge=true` 兜底）——删除后**无需再询问用户是否要删本地功能分支**，此操作已完成。**注意坑**：它不会删除 `.git` 里的 remote-tracking 引用（`origin/xxx`），需 `git fetch --prune` 清掉；远端被删后残留的 `origin/xxx` 引用是陈旧引用，不是真实分支。
 5. 冲突处理（本地 merge 或 PR 分支需 rebase 时）：add/add——两边各自新增同名文件，比较 git show 两边版本保留更新/更完整的一版；content——两拨功能不重叠则手工合并共存，重叠按语义取舍；疑难冲突停下向用户展示让用户决定；解决后 git add 标记
 6. 验证：跑项目验证命令（至少单元测试 + 构建；涉及 server/数据脚本时对应命令也跑）；PR 合并前确认 CI/安全检查通过
-7. 收尾-本地分支：功能完成 → git branch -d <分支>（未合并会被 -d 自动拒绝）；还要继续开发 → git checkout <分支> && git merge main 同步新基线再继续，避免基于过期基线提交
+7. 收尾-本地分支：若走 PR 且用了 `--delete-branch`，本地工作分支已被自动删除，**不需要再执行 `git branch -d` 或询问用户**；确认 `git branch` 无该分支即可。若未自动删（如手动本地 merge 或改为保留），功能完成 → git branch -d <分支>（未合并会被 -d 自动拒绝）；还要继续开发 → git checkout <分支> && git merge main 同步新基线再继续，避免基于过期基线提交
 8. 收尾-验证同步：git status -sb 无 ahead/behind；git ls-remote origin <分支> 无结果（远程已删）
 
 ## Pitfalls
@@ -28,11 +28,12 @@ updated: "2026-08-21"
 - push 被拒后强推 --force → 覆盖远程提交，禁止；普通分支用 pull --rebase
 - 测试不跑就合并 → 产物可能编译失败/测试红；PR 合并前确认密钥扫描（GitGuardian）无告警
 - 删除分支用 git branch -d（安全）而非 -D；本地 main 有未推送提交时不要随合并一起推（先与用户确认）
+- **`gh pr merge --delete-branch` 删本地工作分支 + 远端分支，但不删 remote-tracking 引用（`origin/xxx`）**——`git branch -r` 仍会看到它，这是陈旧引用不是真实分支；需 `git fetch --prune` 才会清掉。删分支后看到 `origin/xxx` 残留别误判没删干净，也别再 `git branch -d` 去删（本地工作分支已没了会报 not found）
 - 合并过程中 dev server/其他终端可能 checkout 到别的分支造成状态漂移，操作前确认 git branch --show-current
 
 ## Verification
 1. 路径 A（direct push）：git push origin main 成功且 git status -sb 无 ahead/behind
-2. 路径 B（PR）：PR state=MERGED（gh pr view <PR号> --json state）且 git fetch origin 后 git log origin/main 能看到功能提交；远程分支已自动删除（ls-remote 无输出）
+2. 路径 B（PR）：PR state=MERGED（gh pr view <PR号> --json state）且 git fetch origin 后 git log origin/main 能看到功能提交；远程分支已自动删除（ls-remote 无输出）；本地工作分支已随 `--delete-branch` 删除（git branch 无该分支）。清 remote-tracking 引用：git fetch --prune 后 git branch -r 无该分支
 3. 本地同步：git checkout main && git pull 后 git status -sb 无 ahead/behind
 4. 验证命令通过（单元测试/构建/对应数据脚本）；grep -rn '<<<<<<<' 冲突目标文件无残留标记
-5. 若删本地分支：git branch 列表无功能分支；git branch -d 已合并校验
+5. 若删本地分支：git branch 列表无功能分支（走 PR 的 `--delete-branch` 已自动删，无需再手动删）；git branch -r 在 git fetch --prune 后无对应 remote-tracking 引用；git branch -d 已合并校验
