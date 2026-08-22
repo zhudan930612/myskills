@@ -1,188 +1,195 @@
 ﻿{
-    "version": 1,
-    "updatedAt": "2026-08-15T17:12:07+08:00",
-    "skills": [
-        {
-            "name": "agent-reach",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "api-and-interface-design",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "author-agents-md",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "codebase-design",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "code-simplification",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "commit-work",
-            "scope": "shared",
-            "source": "lock:commit-work",
-            "owner": "shared",
-            "status": "active"
-        },
-        {
-            "name": "design-taste-frontend",
-            "scope": "shared",
-            "source": "lock:design-taste-frontend",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "dev-flow",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "find-skills",
-            "scope": "shared",
-            "source": "lock:find-skills",
-            "owner": "shared",
-            "status": "active"
-        },
-        {
-            "name": "frontend-design",
-            "scope": "shared",
-            "source": "lock:frontend-design",
-            "owner": "shared",
-            "status": "active"
-        },
-        {
-            "name": "global-skill-sync",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "grill-me",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "herdr",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "high-end-visual-design",
-            "scope": "shared",
-            "source": "lock:high-end-visual-design",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "i-have-adhd",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "impeccable",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "improve-codebase-architecture",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "leader",
-            "scope": "shared",
-            "source": "lock:leader",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "minimalist-ui",
-            "scope": "shared",
-            "source": "lock:minimalist-ui",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "neat-freak",
-            "scope": "shared",
-            "source": "lock:neat-freak",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "prd-md",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "redesign-existing-projects",
-            "scope": "shared",
-            "source": "lock:redesign-existing-projects",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "review-requirements",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "security-and-hardening",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "skills-governance-audit",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        },
-        {
-            "name": "tdd",
-            "scope": "shared",
-            "source": "local:managed",
-            "owner": "local",
-            "status": "active"
-        }
-    ]
+    "version":  1,
+    "updatedAt":  "2026-08-22T11:49:49+08:00",
+    "skills":  [
+                   {
+                       "name":  "agent-reach",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "api-and-interface-design",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "author-agents-md",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "codebase-design",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "code-simplification",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "commit-work",
+                       "scope":  "shared",
+                       "source":  "lock:commit-work",
+                       "owner":  "shared",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "design-taste-frontend",
+                       "scope":  "shared",
+                       "source":  "lock:design-taste-frontend",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "dev-flow",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "find-skills",
+                       "scope":  "shared",
+                       "source":  "lock:find-skills",
+                       "owner":  "shared",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "frontend-design",
+                       "scope":  "shared",
+                       "source":  "lock:frontend-design",
+                       "owner":  "shared",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "global-skill-sync",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "grill-me",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "herdr",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "high-end-visual-design",
+                       "scope":  "shared",
+                       "source":  "lock:high-end-visual-design",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "i-have-adhd",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "impeccable",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "improve-codebase-architecture",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "leader",
+                       "scope":  "shared",
+                       "source":  "lock:leader",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "merge-branch-to-main",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "minimalist-ui",
+                       "scope":  "shared",
+                       "source":  "lock:minimalist-ui",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "neat-freak",
+                       "scope":  "shared",
+                       "source":  "lock:neat-freak",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "prd-md",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "redesign-existing-projects",
+                       "scope":  "shared",
+                       "source":  "lock:redesign-existing-projects",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "review-requirements",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "security-and-hardening",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "skills-governance-audit",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "tdd",
+                       "scope":  "shared",
+                       "source":  "local:managed",
+                       "owner":  "local",
+                       "status":  "active"
+                   }
+               ]
 }
