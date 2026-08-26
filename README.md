@@ -57,10 +57,12 @@
 | --- | --- |
 | `api-and-interface-design` | 稳定的 API / 模块边界 / 前后端契约设计 |
 | `codebase-design` | 深模块（deep module）设计的共享词汇 |
+| `code-simplification` | 简化代码提升可读性与可维护性，不改变行为 |
 | `improve-codebase-architecture` | 扫描代码库加深机会，输出 HTML 报告并逐项拷打 |
 | `security-and-hardening` | 对输入、认证、存储、第三方集成的安全加固 |
 | `tdd` | 测试驱动开发（red-green-refactor）与集成测试 |
 | `commit-work` | 高质量 git 提交：审阅、拆分、Conventional Commits |
+| `merge-branch-to-main` | 功能分支合并到 main 的完整流程（管理员验收制协作） |
 
 ### 🔍 研究与检索
 
@@ -88,12 +90,12 @@
 
 | 来源 | 数量 | 说明 |
 | --- | --- | --- |
-| `local:managed` | 16 | 本地自管技能，直接修改 `skills/` 下目录 |
+| `local:managed` | 27 | 直接在 `skills/` 下管理的技能，改完运行 `skills-sync.ps1` 同步 |
 | `lock:find-skills` | 1 | 锁定自 `vercel-labs/skills`（GitHub） |
 | `lock:frontend-design` | 1 | 锁定自 `anthropics/skills`（GitHub） |
 | `lock:commit-work` | 1 | 锁定自 `softaworks/agent-toolkit`（GitHub） |
 | `lock:leader`、`lock:neat-freak` | 2 | 锁定自 `KKKKhazix/khazix-skills`（GitHub） |
-| `lock:taste-skill` 等 13 个 | 13 | 锁定自 `Leonxlnx/taste-skill`（GitHub，重命名安装） |
+| `lock:design-taste-frontend` 等 4 个 | 4 | 锁定自 `Leonxlnx/taste-skill`（GitHub，重命名安装） |
 
 锁定技能的内容与上游仓库逐字节一致（2026-08-14 校验），来源、目录映射（如 `design-taste-frontend` ← 上游 `taste-skill`）记录在 `.skill-lock.json`，升级需先更新锁定信息。最新的 9 个 taste-skill（`brandkit`、`design-taste-frontend-v1`、`full-output-enforcement`、`gpt-taste`、`image-to-code`、`imagegen-frontend-mobile`、`imagegen-frontend-web`、`industrial-brutalist-ui`、`stitch-design-taste`）于 2026-08-26 经 `npx skills add` 新增，来源哈希记录在 `skills-lock.json`（~/.pi 仓库）。
 
