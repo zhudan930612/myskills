@@ -18,7 +18,7 @@
 └── README.md
 ```
 
-## 技能清单（25 个）
+## 技能清单（36 个）
 
 ### 📋 需求与流程
 
@@ -36,11 +36,20 @@
 | 技能 | 用途 |
 | --- | --- |
 | `frontend-design` | 生成有设计质感、避免 AI 模板感的前端界面与组件 |
-| `design-taste-frontend` | 反模板（anti-slop）落地页 / 作品集 / 改版 |
+| `design-taste-frontend` | 反模板（anti-slop）落地页 / 作品集 / 改版（v2 实验版） |
+| `design-taste-frontend-v1` | design-taste-frontend 的 v1 存档版（需精确兼容时用） |
+| `gpt-taste` | GPT/Codex 更激进变体：更高布局方差、强 GSAP 方向 |
+| `image-to-code` | 先出参考图 → 分析 → 再实现前端 |
+| `redesign-existing-projects` | 现有网站 / 应用升级到高级品质，不破坏功能 |
 | `high-end-visual-design` | 高端代理级视觉设计：字体、留白、阴影、动效标准 |
 | `minimalist-ui` | 编辑风格极简界面：暖色单色、排版对比、扁平 bento |
+| `industrial-brutalist-ui` | 工业粗野风：瑞士排版、强对比、实验性布局 |
+| `stitch-design-taste` | 迭代语义设计系统，产出 agent 友好的 DESIGN.md |
+| `brandkit` | 品牌套件图：配色、字体、身份应用 |
+| `imagegen-frontend-web` | 网页设计参考图（hero/落地/多 section，防 slop 美术方向） |
+| `imagegen-frontend-mobile` | 移动端屏幕与流程设计参考图 |
+| `full-output-enforcement` | 强制完整输出，禁止占位/截断 |
 | `impeccable` | 前端全面打磨：UX 审查、视觉层级、可访问性、微交互 |
-| `redesign-existing-projects` | 现有网站 / 应用升级到高级品质，不破坏功能 |
 
 ### 🏗️ 工程与架构
 
@@ -84,9 +93,9 @@
 | `lock:frontend-design` | 1 | 锁定自 `anthropics/skills`（GitHub） |
 | `lock:commit-work` | 1 | 锁定自 `softaworks/agent-toolkit`（GitHub） |
 | `lock:leader`、`lock:neat-freak` | 2 | 锁定自 `KKKKhazix/khazix-skills`（GitHub） |
-| `lock:minimalist-ui` 等 4 个 | 4 | 锁定自 `Leonxlnx/taste-skill`（GitHub，重命名安装） |
+| `lock:taste-skill` 等 13 个 | 13 | 锁定自 `Leonxlnx/taste-skill`（GitHub，重命名安装） |
 
-锁定技能的内容与上游仓库逐字节一致（2026-08-14 校验），来源、目录映射（如 `design-taste-frontend` ← 上游 `taste-skill`）记录在 `.skill-lock.json`，升级需先更新锁定信息。
+锁定技能的内容与上游仓库逐字节一致（2026-08-14 校验），来源、目录映射（如 `design-taste-frontend` ← 上游 `taste-skill`）记录在 `.skill-lock.json`，升级需先更新锁定信息。最新的 9 个 taste-skill（`brandkit`、`design-taste-frontend-v1`、`full-output-enforcement`、`gpt-taste`、`image-to-code`、`imagegen-frontend-mobile`、`imagegen-frontend-web`、`industrial-brutalist-ui`、`stitch-design-taste`）于 2026-08-26 经 `npx skills add` 新增，来源哈希记录在 `skills-lock.json`（~/.pi 仓库）。
 
 ## 常用操作
 
