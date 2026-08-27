@@ -18,7 +18,7 @@
 └── README.md
 ```
 
-## 技能清单（36 个）
+## 技能清单（37 个）
 
 ### 📋 需求与流程
 
@@ -50,6 +50,7 @@
 | `imagegen-frontend-mobile` | 移动端屏幕与流程设计参考图 |
 | `full-output-enforcement` | 强制完整输出，禁止占位/截断 |
 | `impeccable` | 前端全面打磨：UX 审查、视觉层级、可访问性、微交互 |
+| `pixel2motion` | logo 位图 → 最小平滑 SVG → 品牌动效编排 → 独立 HTML 展示（Disney 12 原则 + QA 证据） |
 
 ### 🏗️ 工程与架构
 
