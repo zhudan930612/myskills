@@ -12,11 +12,11 @@ goal 模式激活且目标指向已定稿需求文档时（goal 文本引用需�
 1. 准备：读需求文档 + 验收清单，确认落盘位置（项目既有约定优先，见 references/agent-instructions.md），确认开发顺序（按 A2 依赖）；**若是需求变更后的再开发，先读 agent-instructions.md 的"需求变更影响评估与回归范围"，按影响清单开发，不直接动手**
 2. **形态预检（数据口径/空间形态类需求必做）**：若需求涉及用户可见产物形态由数据决定（地块归属/分组/布局/造数/统计口径），编码前主 agent 先产出**可目视的形态样例**（分布图/统计/小样本产物）给用户确认业务形态；形态与用户预期不符 → 回 prd-md 对齐（画图/样例确认后再定稿），**不进入编码**。文字规格不能替代形态确认
 3. 任务清单生成：按 references/agent-instructions.md 的"任务清单生成（编码前，ticket-map 格式）"生成 tasks 清单（# | 优先级 | 任务纵向切片 | 依赖 | 对应验收项），作为编码 agent 输入与范围基准（与质量审查的范围外改动检测共用）
-4. 编码阶段：启动编码 subagent（用 worker agent，async:true，fresh context，timeoutMs = 86400000ms（24 小时），禁止依赖默认 30 分钟），指令模板见 references/agent-instructions.md；编码 agent 只编码+自测+模块提交，禁止改需求文档和验收清单
+4. 编码阶段：启动编码 subagent（用 worker agent，async:true，fresh context，timeoutMs = 86400000ms（24 小时），禁止依赖默认 30 分钟；**模型不指定，默认与主模型保持一致**，除非用户特别指明），指令模板见 references/agent-instructions.md；编码 agent 只编码+自测+模块提交，禁止改需求文档和验收清单
 5. **产物目视预检（编码完成后、验收前必做）**：编码 subagent 报告完成后，主 agent 先产出**产物样例**（划分图/数据统计/关键产物片段）给用户目视预检业务形态；形态不对 → 回编码调整或需求变更（走影响评估），**不直接启动验收**。防止"自动化验收全过但业务形态不符"
-6. 验收阶段：产物目视预检确认后，启动验收 subagent（用 reviewer agent，async:true，fresh context，timeoutMs = 86400000ms（24 小时），禁止依赖默认 30 分钟），指令模板见 references/agent-instructions.md；验收 agent 只看验收清单、需求点清单+运行命令，不看实现（含覆盖度反向核对）
+6. 验收阶段：产物目视预检确认后，启动验收 subagent（用 reviewer agent，async:true，fresh context，timeoutMs = 86400000ms（24 小时），禁止依赖默认 30 分钟；**模型不指定，默认与主模型保持一致**），指令模板见 references/agent-instructions.md；验收 agent 只看验收清单、需求点清单+运行命令，不看实现（含覆盖度反向核对）
 7. 判断阶段：主 agent 读验收报告 → 全部通过（人工项已确认）→ 阶段8（质量审查）；有失败 → 按失败分类（编码 bug / 需求缺陷 / 环境数据）+ 输出失败原因摘要 → 对应处理（回编码带失败清单 / 回 prd-md 变更 / 处理环境重验）
-8. 质量审查阶段：验收全部通过后，启动质量审查 subagent（用 reviewer agent，async:true，fresh context，timeoutMs = 86400000ms（24 小时））——与验收 agent 相反，**专门读实现代码**，按 references/agent-instructions.md 的质量审查指令模板执行，输出质量审查报告（问题分级：必须修/建议；含范围外改动检测——实现不得超出 tasks 清单与需求范围）。必须修项 → 回编码 agent 带问题清单修复 → 重跑相关测试 → 复检；建议项 → 记录，询问用户是否本期处理
+8. 质量审查阶段：验收全部通过后，启动质量审查 subagent（用 reviewer agent，async:true，fresh context，timeoutMs = 86400000ms（24 小时）；**模型不指定，默认与主模型保持一致**）——与验收 agent 相反，**专门读实现代码**，按 references/agent-instructions.md 的质量审查指令模板执行，输出质量审查报告（问题分级：必须修/建议；含范围外改动检测——实现不得超出 tasks 清单与需求范围）。必须修项 → 回编码 agent 带问题清单修复 → 重跑相关测试 → 复检；建议项 → 记录，询问用户是否本期处理
 9. 完成：DoD 满足 + 必须修项闭环 → 验收报告与质量审查报告归档（默认 <项目文档目录>/archive/验收记录-<名称>-V<N>.md 与 质量审查-<名称>-V<N>.md）→ 向用户汇报 → goal 完成
 10. 循环控制：编码→验收 ≤ 3 轮；同一验收项连续失败 2 次提前升级给用户；每轮必出失败原因摘要；超限停止循环汇总给用户决策
 11. 并行：多个独立需求点可拆多编码 agent 并行（worktree 隔离），默认单 agent 按依赖顺序执行
@@ -24,6 +24,7 @@ goal 模式激活且目标指向已定稿需求文档时（goal 文本引用需�
 
 ## Pitfalls
 - 主 agent 是编排者，不亲自写代码（防自证陷阱）
+- **子代理模型规则：默认所有子代理（编码/验收/质量审查等）与主模型保持一致，不指定 model；仅当用户特别指明用什么模型时才传 model 参数**。禁止在 settings.json subagents 或启动参数里固定特定模型（如 worker=flash/reviewer=pro），避免主模型升级/切换后子代理还用旧模型
 - 编码 agent 禁止改需求文档和验收清单；验收标准有疑问 → 回主 agent 走 prd-md 变更流程，不静默修改
 - 验收 agent 与质量审查 agent 角色隔离：验收不看实现（fresh context 只看清单+命令）、质量审查专看实现（fresh context 只读代码+规范），两轮互相隔离，不得合并或互相污染
 - 质量审查不重验行为：验收清单逐条核对权在验收 agent；质量审查只评实现质量与规范遵从，禁止用它替代或重跑验收
