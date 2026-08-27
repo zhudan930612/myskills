@@ -1,6 +1,6 @@
 ﻿{
     "version":  1,
-    "updatedAt":  "2026-08-26T18:14:38+08:00",
+    "updatedAt":  "2026-08-27T15:15:03+08:00",
     "skills":  [
                    {
                        "name":  "agent-reach",
@@ -202,6 +202,13 @@
                        "name":  "neat-freak",
                        "scope":  "shared",
                        "source":  "lock:neat-freak",
+                       "owner":  "local",
+                       "status":  "active"
+                   },
+                   {
+                       "name":  "pixel2motion",
+                       "scope":  "shared",
+                       "source":  "local:managed",
                        "owner":  "local",
                        "status":  "active"
                    },
